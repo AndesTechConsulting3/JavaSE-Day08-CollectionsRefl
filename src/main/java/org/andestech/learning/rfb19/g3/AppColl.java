@@ -53,8 +53,15 @@ public class AppColl {
 
        // Set
 
-       HashSet<Integer> hashSet = new HashSet<>();
-       hashSet.add(11);
+        HashSet<Integer> hashSet1 = new HashSet<>();
+        hashSet1.add(55);
+        hashSet1.add(22);
+        hashSet1.add(11);
+        hashSet1.add(44);
+
+
+       LinkedHashSet<Integer> hashSet = new LinkedHashSet<>();
+       hashSet.add(55);
         hashSet.add(22);
         hashSet.add(11);
         hashSet.add(44);
@@ -72,7 +79,32 @@ public class AppColl {
            System.out.println(data);
        }
 
+       hashSet.remove(11);
+        System.out.println(hashSet);
 
+
+//  Dictionaries
+
+        HashMap<Integer, String> hashMap =
+                new HashMap<>();
+
+        hashMap.put(100, "FFGGG");
+        hashMap.put(10, "HHHK");
+
+
+        HashMap<String,Book> hashMap1 = new HashMap<>();
+        hashMap1.put("super", new Book("super1","auth","1223-123-123213"));
+        hashMap1.put("super", new Book("super2","auth","1223-123-123213"));
+        hashMap1.put("super", new Book("super3","auth","1223-123-123213"));
+
+
+        Set<String> dset = hashMap1.keySet();
+        for(String key: dset)
+        {
+            System.out.println("key:" + key + ", val:" +
+                    hashMap1.get(key));
+
+        }
 
 
 
@@ -80,6 +112,24 @@ public class AppColl {
 
 
     }
+
+    private static class Book
+    {
+        String title, author, ISBN;
+
+        public Book(String title, String author, String ISBN) {
+            this.title = title;
+            this.author = author;
+            this.ISBN = ISBN;
+        }
+
+       public String toString(){
+
+            return title + ", " +author + ", " + ISBN + ".";
+       }
+
+    }
+
 }
 
 class MyCompare implements Comparator<Integer>
