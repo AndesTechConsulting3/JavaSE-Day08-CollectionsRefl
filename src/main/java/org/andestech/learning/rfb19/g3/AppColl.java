@@ -1,9 +1,6 @@
 package org.andestech.learning.rfb19.g3;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class AppColl {
 
@@ -51,8 +48,31 @@ public class AppColl {
         System.out.println(list);
 
        // TASK
-       // sort invenotiries by numbers:
-       // AA28673, AB23898, BN89234, KL23488
+       // sort inventories by numbers:
+       // AA28673, AB23898, BN89234, KL23488, ...
+
+       // Set
+
+       HashSet<Integer> hashSet = new HashSet<>();
+       hashSet.add(11);
+        hashSet.add(22);
+        hashSet.add(11);
+        hashSet.add(44);
+
+       Iterator<Integer> iterator = hashSet.iterator();
+       while (iterator.hasNext())
+       {
+           System.out.println(iterator.next());
+       }
+
+        System.out.println("----------- the same ------------");
+
+       for(int data: hashSet)
+       {
+           System.out.println(data);
+       }
+
+
 
 
 
